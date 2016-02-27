@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic&subset=latin,cyrillic);
+
+html{
+    font-family:'Roboto', sans-serif;
+}
+
+nav .nav-wrapper{
+    background: #673ab7;
+    padding: 0 30px;
+}
+
+nav .nav-wrapper ul li a:hover{
+    color: #fff;
+}
+
+body{
+    background: #eee;
+}
+
+.wrap .content{
+    background: #fff;
+    width: 975px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
