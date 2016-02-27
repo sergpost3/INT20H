@@ -14,9 +14,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-# Vendor folder
-vendor
-
 # Windows shortcuts
 *.lnk
 
