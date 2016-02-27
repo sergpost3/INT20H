@@ -27,3 +27,17 @@ body{
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+.container .row{
+    width: 930px;
+    margin: auto 30px;
+}
+
+.container .row .s4{
+    padding: 10px 10px;
+    border: 1px solid #673ab7;
+}
+
+.container .row .s4 img{
+    width: 280px;
+}
