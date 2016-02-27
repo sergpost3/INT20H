@@ -46,6 +46,7 @@ $config = [
 				'' => 'site/index',
 				'/' => 'site/index',
 				'/video/<video_name>' => 'channels/index',
+				'/category/<category_name>' => 'site/category',
             ],
         ],
 	'i18n' => array(

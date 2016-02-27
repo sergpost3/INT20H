@@ -1,52 +1,106 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic&subset=latin,cyrillic);
 
-html{
-    font-family:'Roboto', sans-serif;
+html {
+    font-family: 'Roboto', sans-serif;
 }
 
-nav .nav-wrapper{
+nav .nav-wrapper {
     background: #673ab7;
     padding: 0 30px;
 }
 
-nav .nav-wrapper img{
+nav .nav-wrapper img {
     height: 50px;
 }
 
-nav .nav-wrapper ul li a:hover{
+nav .nav-wrapper ul li a:hover {
     color: #fff;
 }
 
-body{
+body {
     background: #eee;
 }
 
-.wrap .content{
+.wrap .content {
     background: #fff;
     width: 975px;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-body .container .row{
-    width: 930px;
-    padding: 0px 30px;
+body .container .row {
     margin-left: 0;
     margin-right: 0;
 }
 
-.container .row .s4{
+.container .row .s4 {
     padding: 20px 10px;
 }
 
-.container .row .s4 img{
+.container .row .s4 img {
     width: 250px;
 }
 
-.s4 a{
+.videos-list img {
+    width: 100%;
+    height: 240px;
+}
+
+.videos-list a {
     text-align: center;
 }
 
+.videos-list span {
+    color: #000;
+    font-size: 22px;
+}
+
+.videos-list .col.s6 {
+    margin-top: 20px;
+}
+
+.page-video {
+    margin-top: 15px;
+}
+
+.page-video .card-video iframe {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10px;
+}
+
+.page-video .comment {
+    margin: 15px 0;
+    border: 2px solid #673ab7;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.page-video .share {
+    text-align: right;
+}
+
+.page-video .share img {
+    height:36px;
+}
+
+.page-video .card-content h3 {
+    margin:0;
+}
+
+.page-video .card-content {
+    border-bottom:2px solid #673ab7;
+}
+
+.page-video .avatar {
+    width:100%;
+    padding-bottom:10px;
+    border-bottom:2px solid #673ab7;
+}
+
+.p0 {
+    padding: 0 !important;
+}
 .container .row .s5 img{
     width: 350px;
 }
