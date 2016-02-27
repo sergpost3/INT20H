@@ -9,6 +9,10 @@ nav .nav-wrapper{
     padding: 0 30px;
 }
 
+nav .nav-wrapper img{
+    height: 50px;
+}
+
 nav .nav-wrapper ul li a:hover{
     color: #fff;
 }

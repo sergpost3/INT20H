@@ -30,7 +30,7 @@ AppAsset::register($this);
     
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
+        <a href="#!" class="brand-logo"><img src="/web/content/logo2.png" alt=""></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="sass.html">Motherlover</a></li>
             <li><a href="sass.html">Video1</a></li>
