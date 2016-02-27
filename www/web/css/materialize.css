@@ -6729,12 +6729,19 @@ nav ul a span.badge {
   right: auto;
 }
 
-.row .col.s4 {
+{
   width: 33.3333333333%;
   margin-left: auto;
   left: auto;
   right: auto;
 }
+
+.row .col.s4:hover p.icon-links a:nth-child(3) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+}
+
 
 .row .col.s5 {
   width: 41.6666666667%;
