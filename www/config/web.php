@@ -7,6 +7,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+		'eauth' => require(__DIR__ . '/eauth.php'),
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'DnH7R2dOGsOXCVSXj2H1kaXrfuoiJpBN',
@@ -47,6 +48,14 @@ $config = [
 				'/video/<video_name>' => 'channels/index',
             ],
         ],
+	'i18n' => array(
+		'translations' => array(
+			'eauth' => array(
+				'class' => 'yii\i18n\PhpMessageSource',
+				'basePath' => '@eauth/messages',
+			),
+		),
+	),
     ],
     'params' => $params,
 ];
