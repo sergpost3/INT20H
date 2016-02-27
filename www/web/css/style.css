@@ -46,3 +46,13 @@ body .container .row{
 .s4 a{
     text-align: center;
 }
+
+.container .row .s5 img{
+    width: 350px;
+}
+
+a .row .s7 {
+    font-weight: bold;
+    padding: 40px 30px;
+    color:  #673ab7;
+}
