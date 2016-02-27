@@ -15,6 +15,12 @@ $this->title = 'My Yii Application';
     </div>
 
     <div class="body-content">
+	<?php
+$identity = Yii::$app->getUser()->getIdentity();
+var_dump($identity->profile); echo "<br>";
+$session = Yii::$app->getSession();
+var_dump($session['eauth_profile']);
+?>
 
         <div class="row">
             <div class="col-lg-4">

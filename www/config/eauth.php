@@ -40,8 +40,8 @@ return array(
 		'facebook' => array(
 			// register your app here: https://developers.facebook.com/apps/
 			'class' => 'nodge\eauth\services\FacebookOAuth2Service',
-			'clientId' => '...',
-			'clientSecret' => '...',
+			'clientId' => '1734195200159712',
+			'clientSecret' => 'b035791be86f50b0a71cf20b4852a95d',
 		),
 		/*'yahoo' => array(
 			'class' => 'nodge\eauth\services\YahooOpenIDService',
@@ -80,8 +80,8 @@ return array(
 		'vkontakte' => array(
 			// register your app here: https://vk.com/editapp?act=create&site=1
 			'class' => 'nodge\eauth\services\VKontakteOAuth2Service',
-			'clientId' => '...',
-			'clientSecret' => '...',
+			'clientId' => '5322382',
+			'clientSecret' => '3FD6mrDxGbmdPdzo5DoO',
 		),
 		/*'mailru' => array(
 			// register your app here: http://api.mail.ru/sites/my/add

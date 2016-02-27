@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\web\Controller;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -41,6 +42,9 @@ class SiteController extends Controller
                     $identity = User::findByEAuth($eauth);
                     Yii::$app->getUser()->login($identity);
  
+					$session = Yii::$app->getSession();
+					$session['eauth_profile'] = $eauth;
+					
                     // special redirect with closing popup window
                     $eauth->redirect();
                 }

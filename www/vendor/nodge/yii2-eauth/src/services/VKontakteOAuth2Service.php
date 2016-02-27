@@ -43,7 +43,7 @@ class VKontakteOAuth2Service extends Service
 			'query' => [
 				'uids' => $tokenData['params']['user_id'],
 				'fields' => '', // uid, first_name and last_name is always available
-				//'fields' => 'nickname, sex, bdate, city, country, timezone, photo, photo_medium, photo_big, photo_rec',
+				'fields' => 'nickname, sex, bdate, age, city, country, timezone, photo, photo_medium, photo_big, photo_rec',
 			],
 		]);
 
@@ -53,7 +53,7 @@ class VKontakteOAuth2Service extends Service
 		$this->attributes['name'] = $info['first_name'] . ' ' . $info['last_name'];
 		$this->attributes['url'] = 'http://vk.com/id' . $info['uid'];
 
-		/*if (!empty($info['nickname']))
+		if (!empty($info['nickname']))
 			$this->attributes['username'] = $info['nickname'];
 		else
 			$this->attributes['username'] = 'id'.$info['uid'];
@@ -68,7 +68,7 @@ class VKontakteOAuth2Service extends Service
 		$this->attributes['photo'] = $info['photo'];
 		$this->attributes['photo_medium'] = $info['photo_medium'];
 		$this->attributes['photo_big'] = $info['photo_big'];
-		$this->attributes['photo_rec'] = $info['photo_rec'];*/
+		$this->attributes['photo_rec'] = $info['photo_rec'];
 
 		return true;
 	}
