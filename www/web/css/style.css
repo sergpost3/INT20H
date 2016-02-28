@@ -110,3 +110,87 @@ a .row .s7 {
     padding: 40px 30px;
     color:  #673ab7;
 }
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+#controls span {
+    display:inline-block;
+}
+        
+#playpause {
+    background:#eee;
+    color:#333;
+    padding:0 5px;
+    font-size:12pt;
+    text-transform:uppercase;
+    width:50px;
+}
+
+.share{
+	margin: 20px 10px;
+}
+
+.share img{
+	height: 30px;
+}
+
+.comment{
+	margin: 30px 20px;
+	border: 2px solid #673ab7;
+	border-radius: 10px;
+	padding: 10px 30px;
+}
+
+.avatar{
+	height: 70px;
+}
+
+.comment h6{
+	font-weight: bold;
+}
+
+.s11{
+	padding: auto 10px;
+}
+
+.commentText .row .s4 a{
+	font-size: 12px;
+	padding: 5px 5px;
+	line-height: 12px;
+	height: 25px;
+}
+.s11{
+	padding: auto 10px;
+}
+
+.tabs{
+    color: #673ab7;
+}
+
+.commentText .row .s4 a{
+	font-size: 12px;
+	padding: 5px 5px;
+	line-height: 12px;
+	height: 25px;
+}
+
+#columnchart_values0, #columnchart_values1, #columnchart_values2, #columnchart_values3, #columnchart_values4, #columnchart_values5, #columnchart_values6{
+    margin: 60px 10px;
+}
+
+#tab2 .row .t3, #tab3 .row .t3, #tab4 .row .t3{
+    margin-top: 200px;
+}
+
+.row .s12 .tabs .tab a{
+    color: #673ab7;
+}
+
+.row .s12 .tabs .indicator{
+    background: #673ab7;
+}
