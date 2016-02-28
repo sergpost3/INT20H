@@ -54,7 +54,7 @@ class AjaxController extends Controller
     public function actionAddDislike() {
         if( Yii::$app->request->isAjax ) {
             $data = Yii::$app->request->post( "video" );
-            $user_id = 1;
+            $user_id = User::get_user_id();
             $video = Videos::find()
                 ->where( [ "id" => $data ] )
                 ->one();
@@ -92,7 +92,7 @@ class AjaxController extends Controller
     public function actionAddLikeComment() {
         if( Yii::$app->request->isAjax ) {
             $data = intval( Yii::$app->request->post( "comment" ) );
-            $user_id = 1;
+            $user_id = User::get_user_id();
             $comment = Comments::find()
                 ->where( [ "id" => $data ] )
                 ->one();
@@ -130,7 +130,7 @@ class AjaxController extends Controller
     public function actionAddDislikeComment() {
         if( Yii::$app->request->isAjax ) {
             $data = intval( Yii::$app->request->post( "comment" ) );
-            $user_id = 1;
+            $user_id = User::get_user_id();
             $comment = Comments::find()
                 ->where( [ "id" => $data ] )
                 ->one();

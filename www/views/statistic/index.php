@@ -1,3 +1,6 @@
+<?php
+use app\models\Comments;
+?>
 <div class="row">
     <div class="col s12">
         <ul class="tabs row">
@@ -8,31 +11,8 @@
         </ul>
     </div>
     <div id="tab1" class="col s12">
-        <div class="comments">
-            <div class="comment row">
-                <div class="col s2">
-                    <img src="../views/example/Facebook_logo_36x36.svg.png" class="avatar">
-                </div>
-                <div class="col s10">
-                    <div class="name"><h6>Venijamin Pryanikov</h6></div>
-                    <hr>
-                    <div class="commentText">
-                        <div class="row">
-                            <div class="col s8">
-                                <p>Otpiuyus'!!111!</p>
-                            </div>
-                            <div class="col s4">
-                                <a class="waves-effect waves-light btn green darken-3"><i class="tiny material-icons">thumb_up</i>
-                                    <span id="commentLikes">5</span></a>
-                                <a class="waves-effect waves-light btn red accent-4"><i class="tiny material-icons">thumb_down</i>
-                                    <span id="commentDislikes">3</span></a>
-                                <a class="waves-effect waves-light btn indigo darken-4"><i class="tiny material-icons">call_made</i>
-                                    <span id="commentShare">3</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="comments_statistic">
+            <?php echo $this->render( "//_partials/comments", [ "video" => false, "comments" => $comments ] ); ?>
         </div>
     </div>
     <div id="tab2" class="col s12">

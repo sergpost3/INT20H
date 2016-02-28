@@ -1,4 +1,4 @@
-<?php if(!Yii::$app->getUser()->isGuest) : ?>
+<?php if(!Yii::$app->getUser()->isGuest && $video) : ?>
 <form class="add_comment" action="" method="post">
     <input type="hidden" name="_csrf" value="<?= Yii::$app->request->getCsrfToken() ?>"/>
     <input type="hidden" name="video_id" value="<?= $video->id; ?>"/>

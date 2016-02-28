@@ -14,7 +14,7 @@ class ChannelsController extends Controller
 {
     public function actionIndex() {
         if(Yii::$app->request->post( "video_id" )) {
-            $user_id = 1;
+            $user_id = User::get_user_id();
             $comment = new Comments();
             $comment->user_id = $user_id;
             $comment->post_id = Yii::$app->request->post( "video_id" );
