@@ -194,3 +194,17 @@ a .row .s7 {
 .row .s12 .tabs .indicator{
     background: #673ab7;
 }
+
+.sideBar{
+    background: #673ab7;
+    color: #fff;
+    text-align: center;
+}
+
+.sideBar a{
+    color: #fff;
+}
+
+.sideBar img{
+    width: 100%;
+}
