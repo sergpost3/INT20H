@@ -208,3 +208,18 @@ a .row .s7 {
 .sideBar img{
     width: 100%;
 }
+
+form{
+    padding: 30px 30px;
+}
+
+form h3{
+    text-align: center;
+}
+
+form .s7{
+    margin-top: 20px;
+}
+.browser-default option{
+    color: #673ab7;
+}
