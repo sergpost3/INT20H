@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\Users;
 
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
@@ -11,7 +12,15 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public $password;
     public $authKey;
     public $accessToken;
-	public $profile;
+    public $profile;
+
+    public static function get_user_id() {
+        $p = Yii::$app->getUser()->getIdentity()->profile;
+        $a = Users::find()
+            ->where( [ "social_name" => $p["service"], "social_id" => $p["id"] ] )
+            ->one();
+        return $a->id;
+    }
 
     private static $users = [
         '100' => [
@@ -33,40 +42,39 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     /**
      * @inheritdoc
      */
-    public static function findIdentity($id) {
-        if (Yii::$app->getSession()->has('user-'.$id)) {
-            return new self(Yii::$app->getSession()->get('user-'.$id));
+    public static function findIdentity( $id ) {
+        if( Yii::$app->getSession()->has( 'user-' . $id ) ) {
+            return new self( Yii::$app->getSession()->get( 'user-' . $id ) );
         }
         else {
-            return isset(self::$users[$id]) ? new self(self::$users[$id]) : null;
+            return isset( self::$users[$id] ) ? new self( self::$users[$id] ) : null;
         }
     }
-	
-	public static function findByEAuth($service) {
-        if (!$service->getIsAuthenticated()) {
-            throw new ErrorException('EAuth user should be authenticated before creating identity.');
+
+    public static function findByEAuth( $service ) {
+        if( !$service->getIsAuthenticated() ) {
+            throw new ErrorException( 'EAuth user should be authenticated before creating identity.' );
         }
- 
-        $id = $service->getServiceName().'-'.$service->getId();
+
+        $id = $service->getServiceName() . '-' . $service->getId();
         $attributes = array(
             'id' => $id,
-            'username' => $service->getAttribute('name'),
-            'authKey' => md5($id),
+            'username' => $service->getAttribute( 'name' ),
+            'authKey' => md5( $id ),
             'profile' => $service->getAttributes(),
         );
         $attributes['profile']['service'] = $service->getServiceName();
-        Yii::$app->getSession()->set('user-'.$id, $attributes);
-        return new self($attributes);
+        Yii::$app->getSession()->set( 'user-' . $id, $attributes );
+        return new self( $attributes );
     }
 
     /**
      * @inheritdoc
      */
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
+    public static function findIdentityByAccessToken( $token, $type = null ) {
+        foreach( self::$users as $user ) {
+            if( $user['accessToken'] === $token ) {
+                return new static( $user );
             }
         }
 
@@ -76,14 +84,13 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     /**
      * Finds user by username
      *
-     * @param  string      $username
+     * @param  string $username
      * @return static|null
      */
-    public static function findByUsername($username)
-    {
-        foreach (self::$users as $user) {
-            if (strcasecmp($user['username'], $username) === 0) {
-                return new static($user);
+    public static function findByUsername( $username ) {
+        foreach( self::$users as $user ) {
+            if( strcasecmp( $user['username'], $username ) === 0 ) {
+                return new static( $user );
             }
         }
 
@@ -93,35 +100,31 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     /**
      * @inheritdoc
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
     /**
      * @inheritdoc
      */
-    public function getAuthKey()
-    {
+    public function getAuthKey() {
         return $this->authKey;
     }
 
     /**
      * @inheritdoc
      */
-    public function validateAuthKey($authKey)
-    {
+    public function validateAuthKey( $authKey ) {
         return $this->authKey === $authKey;
     }
 
     /**
      * Validates password
      *
-     * @param  string  $password password to validate
+     * @param  string $password password to validate
      * @return boolean if password provided is valid for current user
      */
-    public function validatePassword($password)
-    {
+    public function validatePassword( $password ) {
         return $this->password === $password;
     }
 }

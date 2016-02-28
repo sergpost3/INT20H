@@ -42,16 +42,27 @@ class FacebookOAuth2Service extends Service
 		'access_token' => 'https://graph.facebook.com/oauth/access_token',
 	];
 	protected $baseApiUrl = 'https://graph.facebook.com/v2.5/';
+	protected $scope = 'email,user_birthday,user_hometown,user_location,user_photos';
 
 	protected function fetchAttributes()
 	{
 		$info = $this->makeSignedRequest('me', [
             'query' => [
                 'fields' => join(',', [
-                    'id',
-                    'name',
-                    'link',
-					'gender'
+					'id',
+					'name',
+					'link',
+					'email',
+					'verified',
+					'first_name',
+					'last_name',
+					'gender',
+					'birthday',
+					'hometown',
+					'location',
+					'locale',
+					'timezone',
+					'updated_time',
                 ])
             ]
         ]);
@@ -60,6 +71,7 @@ class FacebookOAuth2Service extends Service
 		$this->attributes['name'] = $info['name'];
 		$this->attributes['gender'] = $info['gender'];
 		$this->attributes['url'] = $info['link'];
+		$this->attributes = array_merge($this->attributes, $info);
 
 		return true;
 	}
