@@ -13,6 +13,25 @@ use app\models\PostViews;
 class StatisticController extends Controller
 {
     public function actionIndex() {
-        return $this->render( "index" );
+        $comments = Comments::find()
+            ->orderBy( "`likes_count` DESC" )
+            ->offset( 0 )
+            ->limit( 10 )
+            ->all();
+
+        foreach($comments as $key=>$value) {
+            $comments[$key]->user = Users::find()
+                ->where( [ "id" => $value->user_id ] )
+                ->one();
+        }
+
+        $res = mysql_fetch_array(mysql_query("SELECT * FROM `users` WHERE 1"));
+        print_r($res);
+
+        $data = [
+            "comments" => $comments
+        ];
+
+        return $this->render( "index", $data );
     }
 }
