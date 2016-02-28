@@ -5,11 +5,11 @@
 
     <div class="row card-action ">
         <div class="col s6 p0 actions">
-            <a class="waves-effect waves-light btn green darken-3">Likes:
+            <a class="waves-effect waves-light btn green darken-3 video-likes"><i class="small material-icons">thumb_up</i>
                 <span id="likes"><?= $video->likes_count; ?></span></a>
-            <a class="waves-effect waves-light btn red accent-4">Dislikes:
+            <a class="waves-effect waves-light btn red accent-4 video-dislikes"><i class="small material-icons">thumb_down</i>
                 <span id="dislikes"><?= $video->dislikes_count; ?></span></a>
-            <span class="waves-effect waves-light btn red accent-4">Views: <?= $video->views_count; ?></span>
+            <span class="waves-effect waves-light btn deep-purple"><i class="small material-icons">visibility</i><?= $video->views_count; ?></span>
         </div>
         <div class="col s6 p0 share">
             <a href=""><img src="/web/images/share_vk.png"></a>
@@ -22,5 +22,5 @@
         <p><?= $video->text; ?></p>
     </div>
 
-    <?php echo $this->render( "//_partials/comments", [ "comments" => $comments ] ); ?>
+    <?php echo $this->render( "//_partials/comments", [ "video" => $video, "comments" => $comments ] ); ?>
 </div>

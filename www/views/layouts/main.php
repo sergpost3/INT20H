@@ -46,6 +46,7 @@ AppAsset::register( $this );
 
 <script src="/web/js/jquery-2.2.0.js"></script>
 <script src="/web/js/materialize.js"></script>
+<script src="/web/js/smartcore.js"></script>
 
 <?php $this->endBody() ?>
 </body>
