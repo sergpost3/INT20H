@@ -35,12 +35,11 @@ AppAsset::register( $this );
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; Increment <?= date( 'Y' ) ?></p>
-
-            <p class="pull-right"></p>
-        </div>
-    </footer>
+    <div class="container">
+        <p class="pull-left">&copy; Increment <?= date('Y') ?></p>
+        <p class="pull-right"><a href="http://facebook.com"><i class="fa fa-facebook fa-3x"></i></a> <a href="http://vk.com"><i class="fa fa-vk fa-3x"></i></a></p>
+    </div>
+</footer>
 
 </div>
 

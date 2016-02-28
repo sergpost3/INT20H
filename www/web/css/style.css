@@ -223,3 +223,15 @@ form .s7{
 .browser-default option{
     color: #673ab7;
 }
+
+html body .footer{
+    color: #fff;
+    background: #673ab7;
+    height: 128px;
+    padding-top: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+html body .footer a{
+    color: #fff;
+}
