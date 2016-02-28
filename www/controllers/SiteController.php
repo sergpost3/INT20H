@@ -73,7 +73,12 @@ class SiteController extends Controller
             ->limit( 6 )
             ->all();
 
-        return $this->render( 'index', [ "videos" => $videos ] );
+        return $this->render( 'index', [ "videos" => $videos, "header" => "Last videos" ] );
+    }
+
+    public function actionLogout() {
+        Yii::$app->getUser()->logout();
+        return $this->redirect( '/' );
     }
 
     public function actionCategory() {
@@ -82,7 +87,7 @@ class SiteController extends Controller
             ->where( [ "url" => Yii::$app->request->get( "category_name" ) ] )
             ->one();
         if( count( $category ) == 0 )
-            echo'111';//throw new \yii\web\NotFoundHttpException();
+            throw new \yii\web\NotFoundHttpException();
         else {
             $videos = Videos::find()
                 ->where( [ "category" => $category->id ] )
@@ -91,7 +96,8 @@ class SiteController extends Controller
                 ->limit( 4 )
                 ->all();
 
-            return $this->render( 'index', [ "videos" => $videos ] );
+            $header = "Last videos from category <b>{$category->name}</b>";
+            return $this->render( 'index', [ "videos" => $videos, "header" => $header ] );
         }
     }
 }

@@ -47,6 +47,7 @@ $config = [
 				'/' => 'site/index',
 				'/video/<video_name>' => 'channels/index',
 				'/category/<category_name>' => 'site/category',
+				'/logout' => 'site/logout',
             ],
         ],
 	'i18n' => array(

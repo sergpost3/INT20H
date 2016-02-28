@@ -71,7 +71,6 @@ body .container .row {
 
 .page-video .comment {
     margin: 15px 0;
-    border: 2px solid #673ab7;
     border-radius: 10px;
     padding: 10px 0;
 }
@@ -81,120 +80,132 @@ body .container .row {
 }
 
 .page-video .share img {
-    height:36px;
+    height: 36px;
 }
 
 .page-video .card-content h3 {
-    margin:0;
+    margin: 0;
 }
 
 .page-video .card-content {
-    border-bottom:2px solid #673ab7;
+    border-bottom: 2px solid #673ab7;
 }
 
 .page-video .avatar {
-    width:100%;
-    padding-bottom:10px;
-    border-bottom:2px solid #673ab7;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #673ab7;
 }
 
 .p0 {
     padding: 0 !important;
 }
-.container .row .s5 img{
+
+.container .row .s5 img {
     width: 350px;
 }
 
 a .row .s7 {
     font-weight: bold;
     padding: 40px 30px;
-    color:  #673ab7;
+    color: #673ab7;
 }
 
 .icon-block {
-  padding: 0 15px;
+    padding: 0 15px;
 }
+
 .icon-block .material-icons {
-	font-size: inherit;
+    font-size: inherit;
 }
 
 #controls span {
-    display:inline-block;
+    display: inline-block;
 }
-        
+
 #playpause {
-    background:#eee;
-    color:#333;
-    padding:0 5px;
-    font-size:12pt;
-    text-transform:uppercase;
-    width:50px;
+    background: #eee;
+    color: #333;
+    padding: 0 5px;
+    font-size: 12pt;
+    text-transform: uppercase;
+    width: 50px;
 }
 
-.share{
-	margin: 20px 10px;
+.share img {
+    height: 30px;
 }
 
-.share img{
-	height: 30px;
+.comment {
+    margin: 30px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px 30px;
 }
 
-.comment{
-	margin: 30px 20px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	border-radius: 10px;
-	padding: 10px 30px;
+.comment h6 {
+    font-weight: bold;
+    text-align: center;
 }
 
-.avatar{
-	height: 70px;
+.s11 {
+    padding: auto 10px;
 }
 
-.comment h6{
-	font-weight: bold;
+.commentText .row .s4 a {
+    font-size: 12px;
+    padding: 5px 5px;
+    line-height: 12px;
+    height: 25px;
 }
 
-.s11{
-	padding: auto 10px;
+.s11 {
+    padding: auto 10px;
 }
 
-.commentText .row .s4 a{
-	font-size: 12px;
-	padding: 5px 5px;
-	line-height: 12px;
-	height: 25px;
-}
-.s11{
-	padding: auto 10px;
-}
-
-.tabs{
+.tabs {
     color: #673ab7;
 }
 
-.commentText .row .s4 a{
-	font-size: 12px;
-	padding: 5px 5px;
-	line-height: 12px;
-	height: 25px;
+.commentText .row .s4 a {
+    font-size: 12px;
+    padding: 5px 5px;
+    line-height: 12px;
+    height: 25px;
 }
 
-#columnchart_values0, #columnchart_values1, #columnchart_values2, #columnchart_values3, #columnchart_values4, #columnchart_values5, #columnchart_values6{
+#columnchart_values0, #columnchart_values1, #columnchart_values2, #columnchart_values3, #columnchart_values4, #columnchart_values5, #columnchart_values6 {
     margin: 60px 10px;
 }
 
-#tab2 .row .t3, #tab3 .row .t3, #tab4 .row .t3{
+#tab2 .row .t3, #tab3 .row .t3, #tab4 .row .t3 {
     margin-top: 200px;
 }
 
-.row .s12 .tabs .tab a{
+.row .s12 .tabs .tab a {
     color: #673ab7;
 }
 
-.row .s12 .tabs .indicator{
+.row .s12 .tabs .indicator {
     background: #673ab7;
 }
 
+.nav-wrapper .auth-widget {
+    padding-top: 15px;
+}
+
+h2.page-header {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+.waves-effect span {
+    position: relative;
+    top: -5px;
+    left: 5px;
+}
 .sideBar{
     background: #673ab7;
     color: #fff;

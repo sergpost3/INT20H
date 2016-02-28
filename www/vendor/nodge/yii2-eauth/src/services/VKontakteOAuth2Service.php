@@ -58,7 +58,7 @@ class VKontakteOAuth2Service extends Service
 		else
 			$this->attributes['username'] = 'id'.$info['uid'];
 
-		$this->attributes['gender'] = $info['sex'] == 1 ? 'F' : 'M';
+		$this->attributes['gender'] = $info['sex'] == 1 ? 'female' : 'male';
 
 		$this->attributes['city'] = $info['city'];
 		$this->attributes['country'] = $info['country'];

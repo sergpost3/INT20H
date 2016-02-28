@@ -1,3 +1,4 @@
+<?php if(!Yii::$app->getUser()->isGuest) : ?>
 <form class="add_comment" action="" method="post">
     <input type="hidden" name="_csrf" value="<?= Yii::$app->request->getCsrfToken() ?>"/>
     <input type="hidden" name="video_id" value="<?= $video->id; ?>"/>
@@ -10,6 +11,7 @@
         <i class="material-icons right">send</i>
     </button>
 </form>
+<?php endif; ?>
 
 <div class="comments">
     <?php foreach( $comments as $comment ) : ?>

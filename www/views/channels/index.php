@@ -12,14 +12,11 @@ use yii\helpers\Url;
                 <span id="likes"><?= $video->likes_count; ?></span></a>
             <a class="waves-effect waves-light btn red accent-4 video-dislikes"><i class="small material-icons">thumb_down</i>
                 <span id="dislikes"><?= $video->dislikes_count; ?></span></a>
-            <span class="waves-effect waves-light btn deep-purple"><i class="small material-icons">visibility</i><?= $video->views_count; ?></span>
+            <span class="waves-effect waves-light btn deep-purple"><i class="small material-icons">visibility</i><span><?= $video->views_count; ?></span></span>
         </div>
         <div class="col s6 p0 share">
-            <a href=""><img src="/web/images/share_vk.png"></a>
-            <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?= $video->name; ?>&amp;p[summary]=<?= $video->text; ?>&amp;p[url]=<?= Url::to(''); ?>&amp;p[images][0]=<?= Url::home() . $video->image; ?>','sharer','toolbar=0,status=0,width=700,height=400');"
-               href="javascript: void(0)">
-                <img src="/web/images/share_facebook.png">
-            </a>
+            <a href="http://vk.com/share.php?url=http://<?= $_SERVER["HTTP_HOST"]; ?>/video/<?= $video->url; ?>"target="blank"><img src="/web/images/share_vk.png"></a>
+            <a href="http://www.facebook.com/sharer.php?u=http://<?= $_SERVER["HTTP_HOST"]; ?>/video/<?= $video->url; ?>" target="blank"><img src="/web/images/share_facebook.png"></a>
         </div>
     </div>
     <div class="card-content">
