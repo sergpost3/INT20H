@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=mysql.hostinger.com.ua;dbname=u720116389_int20',
-    'username' => 'u720116389_int20',
-    'password' => 'cppW3P2haBh',
+    'dsn' => 'mysql:host=mollislu.mysql.ukraine.com.ua;dbname=mollislu_serg',
+    'username' => 'mollislu_serg',
+    'password' => 'gt2d6fmy',
     'charset' => 'utf8',
 ];

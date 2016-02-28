@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\User;
+use app\models\Users;
 use app\models\Videos;
 use app\models\Categories;
 
@@ -38,13 +39,35 @@ class SiteController extends Controller
 
             try {
                 if( $eauth->authenticate() ) {
-//                  var_dump($eauth->getIsAuthenticated(), $eauth->getAttributes()); exit;
 
                     $identity = User::findByEAuth( $eauth );
                     Yii::$app->getUser()->login( $identity );
 
                     $session = Yii::$app->getSession();
                     $session['eauth_profile'] = $eauth;
+
+                    $us = new Users();
+                    $us->name = $identity->profile["name"];
+                    $us->gender = $identity->profile["gender"];
+                    $us->city = (isset($identity->profile["city"]) && $identity->profile["city"]!=NULL) ? $identity->profile["city"] : '';
+                    $us->age = (isset($identity->profile["age"])) ? $identity->profile["age"] : NULL;
+                    $us->social_name = $identity->profile["service"];
+                    $us->social_id = $identity->profile["id"];
+                    $us->image = (isset($identity->profile["photo"]) && $identity->profile["photo"]!=NULL) ? $identity->profile["photo"] : '';
+                    $a = Users::find()
+                        ->where(["social_name"=>$us->social_name, "social_id"=>$us->social_id])
+                        ->one();
+                    if(count($a)==0) {
+                        if(is_numeric($us->city)) {
+                            $us->city = intval($us->city);
+                            $a = file_get_contents("https://api.vk.com/method/database.getCitiesById?city_ids={$us->city}&v=5.45");
+                            $a = (array)json_decode($a);
+                            $a = (array)$a["response"];
+                            $a = (array)$a[0];
+                            $us->city = $a["title"];
+                        }
+                        $us->save();
+                    }
 
                     // special redirect with closing popup window
                     $eauth->redirect();

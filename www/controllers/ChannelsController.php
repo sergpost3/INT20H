@@ -7,6 +7,8 @@ use yii\web\Controller;
 use app\models\Videos;
 use app\models\Comments;
 use app\models\Users;
+use app\models\User;
+use app\models\PostViews;
 
 class ChannelsController extends Controller
 {
@@ -36,6 +38,14 @@ class ChannelsController extends Controller
                 ->where( [ "post_id" => $video->id ] )
                 ->orderBy( "`time` DESC" )
                 ->all();
+
+            if(!Yii::$app->getUser()->isGuest) {
+                $vi = new PostViews();
+                $vi->post_id = $video->id;
+                $vi->user_id = User::get_user_id();
+                $vi->time = time();
+                $vi->save();
+            }
 
             foreach($comments as $key=>$value) {
                 $comments[$key]->user = Users::find()
