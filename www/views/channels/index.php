@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <div class="page-video">
     <div class="card-video">
         <?= $video->video; ?>
@@ -13,7 +16,10 @@
         </div>
         <div class="col s6 p0 share">
             <a href=""><img src="/web/images/share_vk.png"></a>
-            <a href=""><img src="/web/images/share_facebook.png"></a>
+            <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?= $video->name; ?>&amp;p[summary]=<?= $video->text; ?>&amp;p[url]=<?= Url::to(''); ?>&amp;p[images][0]=<?= Url::home() . $video->image; ?>','sharer','toolbar=0,status=0,width=700,height=400');"
+               href="javascript: void(0)">
+                <img src="/web/images/share_facebook.png">
+            </a>
         </div>
     </div>
     <div class="card-content">

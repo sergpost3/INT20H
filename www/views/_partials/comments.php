@@ -1,8 +1,9 @@
-<form class="add_comment">
+<form class="add_comment" action="" method="post">
+    <input type="hidden" name="_csrf" value="<?= Yii::$app->request->getCsrfToken() ?>"/>
     <input type="hidden" name="video_id" value="<?= $video->id; ?>"/>
 
     <div class="input-field">
-        <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <textarea id="textarea1" class="materialize-textarea" name="comment_text"></textarea>
         <label for="textarea1">Write your comment</label>
     </div>
     <button class="btn waves-effect waves-light deep-purple" type="submit" name="action">Send
@@ -22,8 +23,9 @@
 
                 <div class="row card-action ">
                     <div class="col s6 p0 actions">
-                        <a class="waves-effect waves-light btn green darken-3 comment-likes"><i class="small material-icons">thumb_up</i><span id="likes"><?= $comment->likes_count; ?></span></a>
-                        <a class="waves-effect waves-light btn red accent-4 comment-dislikes"><i class="small material-icons">thumb_down</i><span id="dislikes"><?= $comment->dislikes_count; ?></span></a>
+                        <input type="hidden" name="comment" value="<?= $comment->id; ?>"/>
+                        <a class="waves-effect waves-light btn green darken-3 comment-likes"><i class="small material-icons">thumb_up</i><span id="comment_likes"><?= $comment->likes_count; ?></span></a>
+                        <a class="waves-effect waves-light btn red accent-4 comment-dislikes"><i class="small material-icons">thumb_down</i><span id="comment_dislikes"><?= $comment->dislikes_count; ?></span></a>
                     </div>
                     <?php /*<div class="col s6 p0 share">
                     <a href=""><img src="/web/images/share_vk.png"></a>
